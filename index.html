@@ -1,0 +1,238 @@
+<!DOCTYPE HTML>
+  <html ng-app="app">
+    <head>
+      <title>project3</title>
+      <meta charset="UTF-8">
+      <link rel="stylesheet" href="assets/css/app.css">
+    </head>
+
+    <body ng-controller="testCtrl">
+      <div id="background1">
+        <div id="column1">
+          <div class="table">
+            <p>Особенности питания</p>
+            <div id="password">
+              <select  class="select tabl" name="select"> 
+                <option value="" selected>Нет ограничений</option> 
+                <option value="">Есть ограничения по состоянию здоровья</option>
+              </select>
+              <img src="assets/img/png/down.png" alt="альтернативный текст">
+            </div>
+          </div>
+
+          <div class="table">
+            <p>Уровень активности</p>
+            <div id="password">
+              <select class="select tabl" name="select"> 
+                <option value="" selected>Не занимаюсь</option> 
+                <option value="">Делаю зарядку по утрам</option>
+                <option value="">Хожу на фитнес</option>
+                <option value="">Занимаюсь профессиональным спортом</option>
+              </select>
+              <img src="assets/img/png/down.png" alt="альтернативный текст">
+            </div>
+          </div>
+
+          <div class="table">
+            <p>Цель</p>
+            <div id="password">
+              <select class="select tabl" name="select"> 
+                <option value="" selected>Похудеть</option> 
+                <option value="">Набрать мышечную массу</option>
+                <option value="">Поддерживать хорошую форму</option>
+              </select>
+              <img src="assets/img/png/down.png" alt="альтернативный текст">
+            </div>
+          </div>
+
+          <div class="table" ng-class="{invisible:gender===0}"> 
+            <p>Дата родов</p>
+            <div id="data">
+              <select class="select month" name="select"> 
+                <option value="" selected>10</option>
+              </select>
+              <select class="select number" name="select"> 
+                <option value="" selected>21</option>
+              </select>
+              <select class="select year" name="select">
+                <option value=""selected>1997</option> 
+              </select>
+            </div>
+          </div>
+
+          <div id="inpt">
+            <div class="for">
+              <div class="check-wrap ng-isolate-scope">
+                <div class="input-wrap">
+                  <input type="checkbox" id="side_2_sign">
+                  <div class="icon"></div>
+                </div>
+                <label for="side_2_sign">Проблемы со спиной</label>
+              </div>
+
+              <div class="check-wrap" ng-class="{invisible:gender===0}">
+                  <div class="input-wrap">
+                  <input type="checkbox" id="side_3_sign"> 
+                  <div class="icon"></div>
+                </div>
+                <label for="side_3_sign" class="binding">Роды в последние полгода</label>
+              </div>
+
+              <div class="check-wrap">
+                <div class="input-wrap">
+                  <input type="checkbox" id="side_4_sign">
+                  <div class="icon"></div>
+                </div>
+                <label for="side_4_sign" class="ng-binding">Варикоз</label>
+              </div>
+
+              <div class="check-wrap">
+                <div class="input-wrap">
+                  <input type="checkbox" id="side_5_sign">
+                  <div class="icon"></div>
+                </div>
+                <label for="side_5_sign">Диастаз</label>
+              </div>
+
+              <div class="check-wrap" ng-class="{invisible:gender===0}">
+                <div class="input-wrap">
+                  <input type="checkbox" id="side_6_sign">
+                  <div class="icon"></div>
+                </div>
+                <label for="side_6_sign">Кесарево</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="height_mobile">
+            <p>Рост:</p>
+            <input id="figure" type="number" name placeholder= "см">
+          </div>
+          <div class="weight">
+            <p>Вес:</p>
+            <input id="figure" type="number" name placeholder= "кг">
+          </div>
+
+          <div class="wish">
+            <p class="w">Желаемый вес:</p>
+            <input id="figure" type="number" name placeholder= "кг">
+          </div>
+        </div>
+
+        <div id="column2">
+          <div class="table">
+            <p>Имя</p>
+            <input class="select tabl" type="text" value="Александр" ng-model="name">
+          </div>
+
+          <div class="table">
+            <p>Страна</p>
+            <div id="password">
+              <select class="select tabl" name="select"> 
+                <option value="">Россия</option> 
+                <option value="">Украина</option>
+                <option value="" selected>Молдова</option>
+              </select>
+              <img src="assets/img/png/down.png" alt="альтернативный текст">
+            </div>
+          </div>
+
+          <div class="table">
+            <p>Город</p>
+            <div id="password">
+              <select class="select tabl" name="select"> 
+                <option value="">Москва</option> 
+                <option value="">Киев</option>
+                <option value="" selected>Кишинёв</option>
+              </select>
+              <img src="assets/img/png/down.png" alt="альтернативный текст">
+            </div>
+          </div>
+
+          <div id="next">
+            <p>Пол</p>
+            <div id="gender">
+              <div id="men" ng-click="gender=0" ng-class="{selected:gender===0}">
+                <p>Мужской</p>
+              </div>
+              <div id="woman" ng-click="gender=1" ng-class="{selected:gender===1}">
+                <p>Женский</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="table">
+            <p>Дата родов</p>
+            <div id="data">
+              <select class="select month" name="select"> 
+                <option value="" selected>10</option>
+              </select>
+              <select class="select number" name="select"> 
+                <option value="" selected>21</option>
+              </select>
+              <select class="select year" name="select">
+                <option value=""selected>1997</option> 
+              </select>
+            </div>
+          </div>
+
+          <div id="form">
+            <div class="height">
+              <p>Рост:</p>
+              <input id="figure" type="number" name placeholder= "см">
+            </div>
+          </div>
+        </div>
+
+        <div id="column3">
+          <div class="oneColumn" ng-class="{forMen:gender===0}">
+            <div class="table">
+              <p>Телефон</p>
+                <input class="select tabl" type="text" value="+89232 123 32 32">
+            </div>
+
+            <div class="table">
+              <p>Эл. почта</p>
+              <input class="select tabl" type="text" value="alexx99@gmail.com">
+            </div>
+          </div>
+
+          <div class="twoColumn">
+            <div class="table">
+              <p class="muli">Пароль</p>
+              <div id="password">
+                <input class="select tabl" type="password" value="11111111" id="myInput">
+                <img src="assets/img/png/Frame.png" alt="альтернативный текст" onclick="myFunction()" Show Password>
+              </div>
+            <div>
+
+            <div class="table">
+              <p class="muli">Новый пароль</p>
+              <div id="password">
+                <input class="select tabl" type="password" value="2222222" id="Input">
+                <img src="assets/img/png/Frame.png" alt="альтернативный текст" onclick="input()" Show Password>
+              </div>
+            </div>
+
+            <div class="table">
+              <p class="muli">Ещё раз новый пароль</p>
+              <div id="password">
+                <input class="select tabl" type="password" value="11111111" id="myInpt">
+                <img src="assets/img/png/Frame.png" alt="альтернативный текст" onclick="myInpt()" Show Password>
+              </div>
+            </div>
+          </div>
+
+          <div id="save" class="submitContainer">
+            <input class="submit" type="submit" value="Сохранить">
+          </div>
+        </div>
+      </div>
+
+      <script src="assets/js/angular.min.js"></script>
+      <script src="assets/js/angular-cookies.min.js"></script>
+      <script src="assets/js/angular-route.min.js"></script>
+      <script src="assets/js/app.js"></script>
+    </body>
+  </html>
+     
